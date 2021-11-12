@@ -4,6 +4,9 @@ var game;
 window.onload = function () {
     initGame();
     $('#flipOrientationBtn').on('click', board.flip);
+    jQuery('#chess_board').on('scroll touchmove touchend touchstart contextmenu', function(e){
+        e.preventDefault();
+    });
 };
 
 // setup my socket client
@@ -30,8 +33,14 @@ var initGame = function() {
 var handleMove = function(source, target ) {
     var move = game.move({from: source, to: target});
     
-    if (move === null)  return 'snapback';
-    else socket.emit("move", move);
+    if (move === null)  {
+        return 'snapback';
+    }
+    else {
+        socket.emit("move", move);
+        console.log("sender: " + board.fen());
+        document.getElementById("fen").innerHTML = board.fen();
+    }
 };
 
 
@@ -39,7 +48,10 @@ var handleMove = function(source, target ) {
 
 // called when the server calls socket.broadcast('move')
 socket.on('move', function (msg) {
-    game.move(msg);
-    console.log(board.fen());
+    game.move(msg);  
     board.position(game.fen()); // fen is the board layout
+    console.log("recvrs: " + board.fen());
+    document.getElementById("fen").innerHTML = board.fen();
+    // TO DO - save data somewhere in local storage, to recover in case of connection lost
 });
+
