@@ -3,6 +3,7 @@ var game;
 
 window.onload = function () {
     initGame();
+    $('#flipOrientationBtn').on('click', board.flip);
 };
 
 // setup my socket client
@@ -33,8 +34,12 @@ var handleMove = function(source, target ) {
     else socket.emit("move", move);
 };
 
+
+
+
 // called when the server calls socket.broadcast('move')
 socket.on('move', function (msg) {
     game.move(msg);
+    console.log(board.fen());
     board.position(game.fen()); // fen is the board layout
 });
