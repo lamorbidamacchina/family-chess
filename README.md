@@ -12,6 +12,9 @@ https://chessboardjs.com/
 Chess logic
 https://github.com/jhlywa/chess.js/blob/master/LICENSE
 
+# online demo
+https://family-chess.herokuapp.com/
+
 # local
 Run locally with:
 npm start
@@ -24,6 +27,11 @@ npm start
 
 # todo
 - show how many users are connected
-- make it mobile friendly, see https://github.com/oakmac/chessboardjs/issues/160
-- add a function to recover from a previous fen in case of lost connection
 - create different rooms for players
+
+
+# done
+- make it mobile friendly, see https://github.com/oakmac/chessboardjs/issues/160
+- add a function to recover from last state in case of closing or loosing connection 
+- avoid page scrolling while dragging, on mobile devices: https://stackoverflow.com/questions/9251590/prevent-page-scroll-on-drag-in-ios-and-android (done with css touch-action)
+
