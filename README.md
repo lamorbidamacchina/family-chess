@@ -26,12 +26,14 @@ npm start
 - deploy
 
 # todo
+- on reload, load the correct side of the keyboard
+- display castling realtime (now it shows up on the next move)
+- create different rooms for players (https://socket.io/docs/v4/rooms/)
 - show how many users are connected
-- create different rooms for players
-
 
 # done
 - make it mobile friendly, see https://github.com/oakmac/chessboardjs/issues/160
 - add a function to recover from last state in case of closing or loosing connection 
 - avoid page scrolling while dragging, on mobile devices: https://stackoverflow.com/questions/9251590/prevent-page-scroll-on-drag-in-ios-and-android (done with css touch-action)
+- check on reload (it needs sleep)
 
