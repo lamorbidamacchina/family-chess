@@ -1,6 +1,7 @@
 var board;
 var game;
 
+// for future room management
 const urlParams = new URLSearchParams(window.location.search);
 const room = urlParams.get('room');
 
@@ -51,6 +52,7 @@ var game_position = 'start';
 if (localStorage.getItem("fen")) {
     game_position = localStorage.getItem("fen");
 }
+
 var pgn = '';
 if (localStorage.getItem("pgn")){
     pgn = localStorage.getItem("pgn");
@@ -76,8 +78,6 @@ var initGame = function() {
    if (pgn != '') {
        game.load_pgn(pgn);
    }
-   //localStorage.setItem("fen", "");
-   //localStorage.setItem("pgn", "");
 };
 
 var handleMove = function(source, target) {
