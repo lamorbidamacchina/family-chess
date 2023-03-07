@@ -12,9 +12,6 @@ https://chessboardjs.com/
 Chess logic
 https://github.com/jhlywa/chess.js/blob/master/LICENSE
 
-# online demo
-https://family-chess.herokuapp.com/
-
 # local
 Run locally with:
 npm start
