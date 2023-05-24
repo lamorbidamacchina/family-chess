@@ -13,7 +13,7 @@ Chess logic
 https://github.com/jhlywa/chess.js/blob/master/LICENSE
 
 # online demo
-https://family-chess.herokuapp.com/
+https://family-chess.fly.dev/
 
 # local
 Run locally with:
